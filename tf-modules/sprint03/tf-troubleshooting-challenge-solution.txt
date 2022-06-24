@@ -1,0 +1,10 @@
+1) Removed #!/bin/bash from startup script "script-blue.sh"
+2) Changed $instance_id variable name from startup script "script-green.sh"
+3) Removed egress rule from LB security group
+4) Changed validation for prefix variable 
+5) Changed route cidr block for public route table
+6) Changed operating_system variable validation name 
+7) Commented variable to provider.tf 
+8) Edited port 80 for security group sg_app, it should be 80 (HTTP) not 81
+9) Changed instance_type to t3.2xsmall, this type of instance doesn't exist
+10) Informed wrong iam policy for instance profille (AmazonS3FullAccess)
