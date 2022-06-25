@@ -15,6 +15,8 @@ resource "aws_subnet" "se_subnet" {
   cidr_block = "10.10.211.0/24"
 
   tags = {
+    Name        = "subnet-module-01"
     Environment = var.environment
+    CreatedBy   = "Terraform Module"
   }
 }
