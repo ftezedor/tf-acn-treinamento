@@ -4,7 +4,7 @@
 # https://registry.terraform.io/providers/hashicorp/aws/latest
 
 ############################################# TERRAFORM #############################################
-/* terraform {
+terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
@@ -16,11 +16,44 @@
 provider "aws" {
     region = "us-east-1"
     assume_role {
-      role_arn = "arn:aws:iam::902287633309:role/tf-acn-assume-role"
+      role_arn = "arn:aws:iam::838734154092:role/tf-acn-assume-role"
     }
-}*/
+}
 
 /*
+Criar IAM Role 
+
+Com policy de administratorFullAccess
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowAllPermissions",
+            "Effect": "Allow",
+            "NotAction": [
+                "lightsail:*",
+                "sagemaker:*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+Em seguida, atribuir uma Inline policy para Assume Role
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "sts:AssumeRole",
+            "Resource": "arn:aws:iam::838734154092:role/tf-acn-assume-role"
+        }
+    ]
+}
+
+
+
 aws sts assume-role --role-arn arn:aws:iam::830978417405:role/tf-acn-assume-role --role-session-name "tf-acn-treinamento-session" --profile tf-acn-treinamento --output json
 export AWS_ACCESS_KEY_ID=<access-key-id>
 export AWS_SECRET_ACCESS_KEY=<secret-key-id>

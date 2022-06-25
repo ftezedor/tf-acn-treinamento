@@ -4,7 +4,7 @@
 # https://registry.terraform.io/providers/hashicorp/aws/latest
 
 ############################################# TERRAFORM #############################################
-terraform {
+/* terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
@@ -16,4 +16,9 @@ terraform {
 provider "aws" {
     region = "us-east-1"
     profile = "tf-acn-treinamento"
-}
+} */
+
+/* 
+aws configure --profile tf-acn-treinamento
+--- Informar Access Key, Secret Key, Region e Output (text, json ou yaml)
+*/
