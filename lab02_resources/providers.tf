@@ -13,24 +13,6 @@ terraform {
   }
 }
 
-/*
-
- aws sts assume-role --role-arn arn:aws:iam::838734154092:role/tf-acn-assume-role --role-session-name "tf-acn-assume-role-session" --profile tf-acn-workshop --output json
-
-
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "tf-acn-assume-role",
-            "Effect": "Allow",
-            "Action": "sts:AssumeRole",
-            "Resource": "arn:aws:iam::838734154092:role/tf-acn-assume-role"
-        }
-    ]
-}
-*/
-
 provider "aws" {
     region = "us-east-1"
     assume_role {
