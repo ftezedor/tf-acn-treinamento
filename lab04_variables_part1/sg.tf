@@ -4,9 +4,8 @@
 # https://registry.terraform.io/providers/hashicorp/aws/latest
 
 ############################################# TERRAFORM #############################################
-
-data "aws_vpc" "vpc" {
-  cidr_block = var.vpc_cidr_block
+locals {
+  environment = "dev"
 }
 
 // SECURITY GROUPS

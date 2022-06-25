@@ -25,7 +25,7 @@ variable "profile" {
   default = "tf-acn-treinamento"
 }
 
-variable "vpc_id" {
+variable "vpc_cidr_block" {
   type = string
-  default = "vpc-123456"
+  default = "10.0.0.0/16"
 }
