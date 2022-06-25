@@ -14,9 +14,7 @@
 #######################################################################################################
 
 module "networking" {
-  source = "."
-  # major.minor[.build[.revision]] (example: 1.2.12)
-  version = "1.0.0"
+  source = "./resources"
 
   // PROVIDER
   assume_role = var.assume_role
