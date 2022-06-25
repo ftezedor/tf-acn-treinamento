@@ -4,7 +4,7 @@
 # https://registry.terraform.io/providers/hashicorp/aws/latest
 
 ############################################# TERRAFORM #############################################
-terraform {
+/* terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
@@ -18,7 +18,7 @@ provider "aws" {
     assume_role {
       role_arn = "arn:aws:iam::838734154092:role/tf-acn-assume-role"
     }
-}
+} */
 
 /*
 Criar IAM Role 
