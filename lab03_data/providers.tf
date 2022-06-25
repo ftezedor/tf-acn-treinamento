@@ -1,9 +1,9 @@
-############################################# LUCAS OMENA #############################################
+############################################# TERRAFORM #############################################
 
 # Terraform Providers são plugins utilizados para interagir e se conectar com sistemas remotos
 # https://registry.terraform.io/providers/hashicorp/aws/latest
 
-#######################################################################################################
+############################################# TERRAFORM #############################################
 terraform {
   required_providers {
     aws = {
@@ -14,8 +14,6 @@ terraform {
 }
 
 provider "aws" {
-    region = "us-east-1"
-    assume_role {
-      role_arn = "arn:aws:iam::902287633309:role/tf-acn-assume-role"
-    }
+    region  = "us-east-1"
+    profile = "tf-acn-treinamento"
 }
