@@ -1,10 +1,10 @@
-############################################# LUCAS OMENA #############################################
+############################################# TERRAFORM #############################################
 
 # Terraform Resource é um bloco que descreve um ou mais objetos de infraestrutura ou componentes 
 # em alto nível como por exemplo VPC, VNET, EC2, RDS etc.
 # https://www.terraform.io/language/resources
 
-#######################################################################################################
+############################################# TERRAFORM #############################################
 # <block_type> "<label>" "<name_label>"
 resource "aws_vpc" "first_vpc" {
   #    <key>        <value>  
