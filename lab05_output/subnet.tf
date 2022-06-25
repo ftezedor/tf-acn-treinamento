@@ -7,7 +7,7 @@
 
 // LOCAL VARIABLES
 locals {
-  subnet_tag = join("-", ["tf", "subnet", var.environment])
+  subnet_tag = join("-", ["tf", "subnet", "lab05", var.environment])
   environments = {
     "dev"     = "development"
     "pre"     = "pre-production"
