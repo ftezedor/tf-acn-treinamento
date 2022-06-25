@@ -15,6 +15,28 @@
 
 ############################################# TERRAFORM #############################################
 
-region  = "us-east-1"
-profile = "tf-acn-treinamento"
-vpc_id  = "vpc-0d40ecb598f56d856"
+region         = "us-east-1"
+profile        = "tf-acn-treinamento"
+vpc_cidr_block = "10.0.0.0/16"
+environment    = "dev"
+counter        = 1
+prefix         = "tf"
+
+ingress_rules = [{
+  description = "Allow SSH"
+  from_port   = 22
+  to_port     = 22
+  protocol    = "tcp"
+  cidr_blocks = [
+    "0.0.0.0/0"
+  ] } 
+]
+
+custom_tags = {
+    "Purpose" = "Terraform Workshop"
+}
+
+cost_tags = {
+    "bussiness-unit" = "ACN"
+    "department"     = "IC"
+}

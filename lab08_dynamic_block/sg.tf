@@ -4,31 +4,29 @@
 # https://www.terraform.io/language/expressions/dynamic-blocks
 
 ############################################# TERRAFORM #############################################
-
-data "aws_vpc" "vpc" {
-  cidr_block = var.vpc_cidr_block
+locals {
+  default_tags = {
+    "Name"        = join("-", [var.prefix, join("_", ["security", "group", var.environment, format("%02d", var.counter)])]),
+    "Environment" = "${var.environment}"
+  }
 }
 
 // SECURITY GROUPS
 resource "aws_security_group" "sg" {
-  name        = join("-", [var.prefix, lower(var.purpose), "security", "group"])
-  description = join(" ", [var.prefix, lower(var.purpose), "security", "group", lower(local.environment)])
+  name        = join("-", [var.prefix, lower(var.environment)])
+  description = join(" ", ["security", "group", lower(var.environment)])
   vpc_id      = data.aws_vpc.vpc.id
   dynamic "ingress" {
-    for_each = var.allowed_ports
+    for_each = var.ingress_rules
     content {
       description = ingress.value.description
       from_port   = ingress.value.from_port
       to_port     = ingress.value.to_port
       protocol    = ingress.value.protocol
-      cidr_blocks = [ingress.value.cidr_blocks]
+      cidr_blocks = ingress.value.cidr_blocks
     }
   }
-  tags = {
-    "Name"        = join("-", [var.prefix, join("_", [lower(var.purpose), "security", "group", var.environment, format("%02d", var.number_of_sequence)])]),
-    "Environment" = "${local.environment}",
-    "Purpose"     = "${var.purpose}"
-  }
+  tags = merge(local.default_tags, var.custom_tags, var.cost_tags)
 }
 
 // SECURITY GROUP RULES

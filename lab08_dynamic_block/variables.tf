@@ -25,9 +25,24 @@ variable "profile" {
   default = ""
 }
 
-variable "vpc_id" {
+variable "vpc_cidr_block" {
   type = string
   default = ""
+}
+
+variable "environment" {
+  type = string
+  default = ""
+}
+
+variable "prefix" {
+  type = string
+  default = "tf"
+}
+
+variable "counter" {
+  type = number
+  default = 1
 }
 
 variable "ingress_rules" {
@@ -38,5 +53,15 @@ variable "ingress_rules" {
     protocol    = string
     cidr_blocks = list(string)
   }))
+  default = null
+}
+
+variable "custom_tags" {
+  type = map(any)
+  default = null
+}
+
+variable "cost_tags" {
+  type = map(any)
   default = null
 }

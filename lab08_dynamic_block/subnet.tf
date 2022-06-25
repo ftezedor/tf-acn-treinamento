@@ -17,14 +17,14 @@
 ############################################# TERRAFORM #############################################
 
 data "aws_vpc" "vpc" {
-  id = var.vpc_id
+  cidr_block = var.vpc_cidr_block
 }
 
 # <block_type> "<label>" "<name_label>"
 resource "aws_subnet" "first_subnet" {
   vpc_id = data.aws_vpc.vpc.id
   
-  cidr_block = cidrsubnet("10.0.0.0/20", 4, 2) 
+  cidr_block = cidrsubnet(data.aws_vpc.vpc.cidr_block, 8, 2) 
 
-  tags = merge(var.standard_tags, var.cost_tags)
+  tags = merge(var.custom_tags, var.cost_tags)
 }
