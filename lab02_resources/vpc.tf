@@ -42,7 +42,7 @@ resource "aws_subnet" "private_subnet" {
 }
 
 resource "aws_eip" "eip" {
-  vpc      = true
+  vpc = true
 }
 
 resource "aws_nat_gateway" "ngw" {

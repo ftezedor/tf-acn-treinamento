@@ -14,9 +14,6 @@ terraform {
 }
 
 provider "aws" {
-    region = "us-east-1"
-    assume_role {
-      role_arn = "arn:aws:iam::902287633309:role/tf-acn-assume-role"
-      session_name = "tf-acn-assume-role-session"
-    }
+    region  = "us-east-1"
+    profile = "tf-acn-treinamento"
 }
