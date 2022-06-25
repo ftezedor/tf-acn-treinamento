@@ -21,9 +21,9 @@ data "aws_vpc" "vpc" {
 }
 
 # <block_type> "<label>" "<name_label>"
-resource "aws_subnet" "se_subnet" {
+resource "aws_subnet" "first_subnet" {
   vpc_id = data.aws_vpc.vpc.id
-  // CIDR BLOCK - 
+  
   cidr_block = cidrsubnet("10.0.0.0/20", 4, 2) 
 
   tags = merge(var.standard_tags, var.cost_tags)
