@@ -15,6 +15,6 @@
 
 #######################################################################################################
 
-region = ""
-assume_role = ""
-vpc_id = ""
+region  = "us-east-1"
+profile = "tf-acn-treinamento"
+vpc_id  = "vpc-0d40ecb598f56d856"
