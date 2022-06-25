@@ -25,16 +25,6 @@ variable "profile" {
   default = "tf-acn-treinamento"
 }
 
-variable "vpc_id" {
-  type = string
-  default = "vpc-016462b1e6df750d7"
-}
-
-variable "counter" {
-  type = number
-  default = 2
-}
-
 variable "environment" {
   type = string
   default = "dev"
