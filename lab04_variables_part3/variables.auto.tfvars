@@ -17,4 +17,4 @@
 
 region   = "us-east-1"
 profile  = "tf-acn-treinamento"
-vpc_id   = "vpc-016462b1e6df750d7"
+vpc_id   = "vpc-0d40ecb598f56d856"

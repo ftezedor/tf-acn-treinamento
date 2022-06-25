@@ -5,13 +5,13 @@
 
 ############################################# TERRAFORM #############################################
 
-resource "random_string" "suffix" {
-  length           = 5
-  special          = false
+resource "random_integer" "suffix" {
+  min = 1
+  max = 50000
 }
 
 resource "aws_s3_bucket" "buckets" {
-  bucket = "my-tf-test-bucket-${random_string.suffix.result}"
+  bucket = "my-tf-test-bucket-${random_integer.suffix.result}"
 
   tags = {
     Environment = "Dev"
