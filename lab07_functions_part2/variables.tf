@@ -20,7 +20,7 @@ variable "region" {
   default = ""
 }
 
-variable "role_arn" {
+variable "profile" {
   type = string
   default = ""
 }

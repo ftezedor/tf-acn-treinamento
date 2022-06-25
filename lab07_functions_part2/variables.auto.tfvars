@@ -16,7 +16,7 @@
 ############################################# TERRAFORM #############################################
 
 region         = "us-east-1"
-role_arn       = "arn:aws:iam::902287633309:role/tf-acn-assume-role"
+profile        = "tf-acn-treinamento"
 vpc_cidr_block = "10.0.0.0/16"
 counter        = 5
 environment    = "dev"
