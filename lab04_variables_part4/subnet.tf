@@ -19,7 +19,7 @@ locals {
     "sec"     = "security"
   }
 
-  environment = local.environments[var.environment]
+  env = local.environments[var.environment]
 }
 
 data "aws_vpc" "vpc" {
@@ -36,6 +36,6 @@ resource "aws_subnet" "subnets" {
     "Name" = local.subnet_tag
     #"Name" = join("-", [local.subnet_tag, count.index])
     #"Name"        = join("-", [local.subnet_tag, sum([1, count.index])])
-    "Environment" = local.environment
+    "Environment" = local.env
   }
 }
