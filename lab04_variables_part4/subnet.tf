@@ -27,7 +27,7 @@ data "aws_vpc" "vpc" {
 }
 
 resource "aws_subnet" "subnets" {
-  #count = var.counter
+  count = var.counter
 
   vpc_id     = data.aws_vpc.vpc.id
   cidr_block = "10.0.20${count.index}.0/24"
