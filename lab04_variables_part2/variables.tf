@@ -8,8 +8,8 @@
 
 
 # Coleções de Variáveis:
-## List/Turple: representado por valores entre chaves ‘[ ]’ separados por vírgula
-## Map: representado por um par de chave/valor entre colchetes ‘{ }’
+## List/Turple: representado por valores entre colchetes ‘[ ]’ separados por vírgula
+## Map: representado por um par de chave/valor entre chaves ‘{ }’
 
 # https://www.terraform.io/language/values/variables
 
