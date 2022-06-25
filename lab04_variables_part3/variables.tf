@@ -1,4 +1,4 @@
-############################################# LUCAS OMENA #############################################
+############################################# TERRAFORM #############################################
 
 # Variáveis primitivas:
 ## String: sequência de caracteres representando algum texto
@@ -8,21 +8,21 @@
 
 
 # Coleções de Variáveis:
-## List/Turple: representado por valores entre chaves ‘[ ]’ separados por vírgula
-## Map: representado por um par de chave/valor entre colchetes ‘{ }’
+## List/Turple: representado por valores entre colchetes ‘[ ]’ separados por vírgula
+## Map: representado por um par de chave/valor entre chaves ‘{ }’
 
 # https://www.terraform.io/language/values/variables
 
-#######################################################################################################
+############################################# TERRAFORM #############################################
 
 variable "region" {
   type = string
   default = "us-east-1"
 }
 
-variable "role_arn" {
+variable "profile" {
   type = string
-  default = "arn:aws:iam::902287633309:role/tf-acn-assume-role"
+  default = "tf-acn-treinamento"
 }
 
 variable "vpc_id" {
