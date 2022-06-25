@@ -15,7 +15,7 @@ terraform {
 
 /*
 
- aws sts assume-role --role-arn arn:aws:iam::830978417405:role/tf-acn-assume-role --role-session-name "tf-acn-assume-role-session" --profile tf-acn-workshop --output json
+ aws sts assume-role --role-arn arn:aws:iam::838734154092:role/tf-acn-assume-role --role-session-name "tf-acn-assume-role-session" --profile tf-acn-workshop --output json
 
 
 {
@@ -25,7 +25,7 @@ terraform {
             "Sid": "tf-acn-assume-role",
             "Effect": "Allow",
             "Action": "sts:AssumeRole",
-            "Resource": "arn:aws:iam::830978417405:role/tf-acn-assume-role"
+            "Resource": "arn:aws:iam::838734154092:role/tf-acn-assume-role"
         }
     ]
 }
