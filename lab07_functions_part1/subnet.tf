@@ -1,4 +1,4 @@
-############################################# LUCAS OMENA #############################################
+############################################# TERRAFORM #############################################
 
 # Terraform inclui diversas built-in functions que podem ser chamadas dentro de uma expressão 
 # para transformar e combinar valores. 
@@ -14,7 +14,7 @@
 ## IP Network Functions
 ## Type Conversion Functions
 
-#######################################################################################################
+############################################# TERRAFORM #############################################
 data "aws_vpc" "vpc" {
   cidr_block = var.vpc_cidr_block
 }
