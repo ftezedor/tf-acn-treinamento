@@ -54,14 +54,14 @@ Em seguida, atribuir uma Inline policy para Assume Role
 
 
 
-aws sts assume-role --role-arn arn:aws:iam::830978417405:role/tf-acn-assume-role --role-session-name "tf-acn-treinamento-session" --profile tf-acn-treinamento --output json
+aws sts assume-role --role-arn arn:aws:iam::838734154092:role/tf-acn-assume-role --role-session-name "tf-acn-treinamento-session" --profile tf-acn-treinamento --output json
 export AWS_ACCESS_KEY_ID=<access-key-id>
 export AWS_SECRET_ACCESS_KEY=<secret-key-id>
 export AWS_SESSION_TOKEN=<token-id>
 
 ===
 
-aws_credentials=$(aws sts assume-role --role-arn arn:aws:iam::830978417405:role/tf-acn-assume-role --role-session-name "tf-acn-treinamento-session" --profile tf-acn-treinamento --output json)
+aws_credentials=$(aws sts assume-role --role-arn arn:aws:iam::838734154092:role/tf-acn-assume-role --role-session-name "tf-acn-treinamento-session" --profile tf-acn-treinamento --output json)
 
 export AWS_ACCESS_KEY_ID=$(echo $aws_credentials|jq '.Credentials.AccessKeyId'|tr -d '"')
 export AWS_SECRET_ACCESS_KEY=$(echo $aws_credentials|jq '.Credentials.SecretAccessKey'|tr -d '"')
