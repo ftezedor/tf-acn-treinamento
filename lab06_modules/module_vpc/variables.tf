@@ -1,4 +1,4 @@
-############################################# LUCAS OMENA #############################################
+############################################# TERRAFORM #############################################
 
 # Variáveis primitivas:
 ## String: sequência de caracteres representando algum texto
@@ -13,26 +13,21 @@
 
 # https://www.terraform.io/language/values/variables
 
-#######################################################################################################
+############################################# TERRAFORM #############################################
 
 variable "region" {
   type = string
-  default = ""
+  default = "us-east-1"
 }
 
-variable "role_arn" {
+variable "profile" {
   type = string
-  default = ""
+  default = "tf-acn-treinamento"
 }
 
 variable "vpc_id" {
   type = string
-  default = ""
-}
-
-variable "counter" {
-  type = number
-  default = 2
+  default = "vpc-12345"
 }
 
 variable "environment" {

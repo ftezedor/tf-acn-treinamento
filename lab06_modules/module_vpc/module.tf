@@ -1,4 +1,4 @@
-############################################# LUCAS OMENA #############################################
+############################################# TERRAFORM #############################################
 
 # Terraform Modules são os principais métodos para empacotar e reusar configuração no Terraform.
 
@@ -11,20 +11,18 @@
 
 # https://www.terraform.io/language/modules
 
-#######################################################################################################
+############################################# TERRAFORM #############################################
 
 module "networking" {
   source = "./resources"
 
   // PROVIDER
-  assume_role = var.assume_role
-  role_arn    = var.role_arn
+  region      = var.region
+  profile     = var.profile
 
   // NETWORKING
   vpc_id            = var.vpc_id
-  subnet_cidr_block = var.subnet_cidr_block
-
+  
   // TAGS
-  standard_tags = var.standard_tags
-  cost_tags     = var.cost_tags
+  environment = var.environment
 }
