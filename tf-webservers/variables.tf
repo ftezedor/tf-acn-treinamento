@@ -77,10 +77,10 @@ variable "operating_system" {
   type    = string
   default = "amazon-linux"
 
-  /* validation {
+  validation {
     condition     = contains(["amazon-linux", "centos", "ubuntu", "redhat"], var.operating_system)
     error_message = "The current support values are amazon-linux, centos, ubuntu or redhat"
-  } */
+  } 
 }
 
 variable "allowed_ports" {
