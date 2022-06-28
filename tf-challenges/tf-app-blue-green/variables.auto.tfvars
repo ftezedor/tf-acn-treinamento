@@ -1,8 +1,8 @@
 ############################################# LUCAS OMENA #############################################
 
 // ACCOUNT PROVIDER
-region   = "us-east-1"
-role_arn = "arn:aws:iam::697538654983:role/tf-acn-assume-role"
+region  = "us-east-1"
+profile = "tf-acn-treinamento"
 
 // NETWORKING
 vpc_cidr_block = "10.10.0.0/16"
@@ -44,7 +44,7 @@ allowed_ports = [{
   protocol    = "tcp"
   cidr_blocks = [
     "0.0.0.0/0"
-  ] } 
+  ] }
 ]
 
 lb_allowed_ports = [{

@@ -1,4 +1,4 @@
-############################################# LUCAS OMENA #############################################
+############################################# TERRAFORM #############################################
 
 /*
 1) Create Terraform Organization
@@ -28,6 +28,8 @@ export AWS_SESSION_TOKEN=$(echo $aws_credentials|jq '.Credentials.SessionToken'|
 
 */
 
+############################################# TERRAFORM #############################################
+
 terraform {
   required_providers {
     aws = {
@@ -38,8 +40,6 @@ terraform {
 }
 
 provider "aws" {
-  region = var.region
-  assume_role {
-    role_arn = var.role_arn
-  }
+  region  = var.region
+  profile = var.profile
 }

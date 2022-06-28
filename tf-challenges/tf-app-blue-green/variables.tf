@@ -9,9 +9,9 @@ variable "region" {
   }
 }
 
-variable "role_arn" {
+variable "profile" {
   type    = string
-  default = "arn:aws:iam::251589962883:role/tf-acn-assume-role"
+  default = "tf-acn-treinamento"
 }
 
 variable "vpc_cidr_block" {
@@ -21,7 +21,7 @@ variable "vpc_cidr_block" {
 
 variable "counter" {
   type    = number
-  default = 1
+  default = 2
 }
 
 variable "environment" {
@@ -36,11 +36,11 @@ variable "environment" {
 
 variable "prefix" {
   type    = string
-  default = "galera"
+  default = "tf"
 
   validation {
-    condition     = contains(["galera"], var.prefix)
-    error_message = "The current support values is galera."
+    condition     = contains(["tf"], var.prefix)
+    error_message = "The current support values is tf."
   }
 }
 
@@ -73,23 +73,14 @@ variable "instance_type" {
   }
 }
 
-variable "ec2_os" {
-  type    = string
-  default = "l"
-  validation {
-    condition     = contains(["l", "w"], var.ec2_os)
-    error_message = "The current support values are l (linux) and w (windows)."
-  }
-}
-
 variable "operating_system" {
   type    = string
   default = "amazon-linux"
 
-  validation {
-    condition     = contains(["amazon-linux", "centos", "ubuntu", "redhat", "macos"], var.operating_system)
-    error_message = "The current support values are amazon-linux, centos, ubuntu, redhat or macos."
-  }
+  /* validation {
+    condition     = contains(["amazon-linux", "centos", "ubuntu", "redhat"], var.operating_system)
+    error_message = "The current support values are amazon-linux, centos, ubuntu or redhat"
+  } */
 }
 
 variable "allowed_ports" {
@@ -103,8 +94,14 @@ variable "allowed_ports" {
   default = null
 }
 
-variable "user_data" {
-  type    = string
+variable "lb_allowed_ports" {
+  type = list(object({
+    description = string
+    from_port   = number
+    to_port     = number
+    protocol    = string
+    cidr_blocks = list(string)
+  }))
   default = null
 }
 
