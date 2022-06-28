@@ -25,7 +25,7 @@ variable "profile" {
   default = ""
 }
 
-variable "vpc_id" {
+variable "vpc_cidr_block" {
   type = string
   default = ""
 }
