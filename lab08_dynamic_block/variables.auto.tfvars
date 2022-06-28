@@ -19,7 +19,7 @@ region         = "us-east-1"
 profile        = "tf-acn-treinamento"
 vpc_cidr_block = "10.0.0.0/16"
 environment    = "dev"
-counter        = 1
+sequence       = 1
 prefix         = "tf"
 
 ingress_rules = [{

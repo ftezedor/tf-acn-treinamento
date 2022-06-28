@@ -6,7 +6,7 @@
 ############################################# TERRAFORM #############################################
 locals {
   default_tags = {
-    "Name"        = join("-", [var.prefix, join("_", ["security", "group", var.environment, format("%02d", var.counter)])]),
+    "Name"        = join("-", [var.prefix, join("_", ["security", "group", var.environment, format("%02d", var.sequence)])]),
     "Environment" = "${var.environment}"
   }
 }
@@ -16,6 +16,7 @@ resource "aws_security_group" "sg" {
   name        = join("-", [var.prefix, lower(var.environment)])
   description = join(" ", ["security", "group", lower(var.environment)])
   vpc_id      = data.aws_vpc.vpc.id
+
   dynamic "ingress" {
     for_each = var.ingress_rules
     content {
@@ -26,6 +27,7 @@ resource "aws_security_group" "sg" {
       cidr_blocks = ingress.value.cidr_blocks
     }
   }
+
   tags = merge(local.default_tags, var.custom_tags, var.cost_tags)
 }
 
