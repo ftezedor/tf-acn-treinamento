@@ -21,7 +21,8 @@ module "networking" {
   profile = var.profile
 
   // NETWORKING
-  vpc_id = var.vpc_id
+  counter = var.counter
+  vpc_id  = var.vpc_id
 
   // TAGS
   environment = var.environment
