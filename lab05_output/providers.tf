@@ -6,20 +6,21 @@
 ############################################# TERRAFORM #############################################
 terraform {
   backend "s3" {
-    bucket = "mybucket"
-    key    = "terraform/lab05/network.tfstate"
-    region = "us-east-1"
+    bucket  = "tf-state-file-965699425769"
+    key     = "terraform/lab05/network.tfstate"
+    region  = "us-east-1"
+    profile = "tf-acn-treinamento"
   }
-  //backend "s3" {}
+  backend "s3" {}
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "4.5.0"
     }
   }
 }
 
 provider "aws" {
-    region  = var.region
-    profile = var.profile
+  region  = var.region
+  profile = var.profile
 }
