@@ -15,14 +15,16 @@
 ## Type Conversion Functions
 
 ############################################# TERRAFORM #############################################
+
 data "aws_vpc" "vpc" {
   cidr_block = var.vpc_cidr_block
 }
 
 resource "aws_subnet" "other_subnet" {
+  count = var.counter
+
   vpc_id = data.aws_vpc.vpc.id
-  
-  cidr_block = cidrsubnet(var.vpc_cidr_block, 4, 2) 
+  cidr_block = cidrsubnet(var.vpc_cidr_block, 4, count.index)
 
   tags = merge(var.standard_tags, var.cost_tags)
 }
