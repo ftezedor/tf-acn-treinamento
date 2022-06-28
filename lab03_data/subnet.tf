@@ -10,7 +10,6 @@ data "aws_vpc" "vpc" {
   cidr_block = "10.0.0.0/16"
 }
 
-# <block_type> "<label>" "<name_label>"
 resource "aws_subnet" "first_subnet" {
   vpc_id = data.aws_vpc.vpc.id
   cidr_block = "10.0.11.0/24"
