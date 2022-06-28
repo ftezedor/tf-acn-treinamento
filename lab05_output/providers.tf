@@ -11,7 +11,7 @@ terraform {
     region  = "us-east-1"
     profile = "tf-acn-treinamento"
   }
-  backend "s3" {}
+  //backend "s3" {}
   required_providers {
     aws = {
       source  = "hashicorp/aws"
