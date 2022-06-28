@@ -30,6 +30,11 @@ variable "vpc_id" {
   default = "vpc-12345"
 }
 
+variable "counter" {
+  type = number
+  default = 1
+}
+
 variable "environment" {
   type = string
   default = "dev"

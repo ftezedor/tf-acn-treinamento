@@ -17,12 +17,12 @@ module "networking" {
   source = "./resources"
 
   // PROVIDER
-  region      = var.region
-  profile     = var.profile
+  region  = var.region
+  profile = var.profile
 
   // NETWORKING
-  vpc_id            = var.vpc_id
-  
+  vpc_id = var.vpc_id
+
   // TAGS
   environment = var.environment
 }
