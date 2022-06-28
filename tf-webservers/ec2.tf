@@ -1,6 +1,6 @@
 ############################################# LUCAS OMENA #############################################
 data "aws_subnet" "selected" {
-  id = aws_subnet.public_subnet.id
+  id = aws_subnet.public_subnet_a.id
 }
 
 resource "aws_instance" "ec2_linux" {
@@ -11,7 +11,7 @@ resource "aws_instance" "ec2_linux" {
   iam_instance_profile = aws_iam_instance_profile.ec2_instance_profile.name
   key_name             = aws_key_pair.key_pair.key_name
 
-  subnet_id              = aws_subnet.public_subnet_a.id
+  subnet_id              = data.aws_subnet.selected.id
   vpc_security_group_ids = [aws_security_group.sg_app.id]
   private_ip             = cidrhost(data.aws_subnet.selected.cidr_block, sum([count.index, 11]))
 
