@@ -20,7 +20,6 @@ data "aws_vpc" "vpc" {
   cidr_block = var.vpc_cidr_block
 }
 
-# <block_type> "<label>" "<name_label>"
 resource "aws_subnet" "first_subnet" {
   vpc_id = data.aws_vpc.vpc.id
   
