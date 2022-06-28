@@ -23,7 +23,7 @@ data "aws_vpc" "vpc" {
 resource "aws_subnet" "other_subnet" {
   count = var.counter
 
-  vpc_id = data.aws_vpc.vpc.id
+  vpc_id     = data.aws_vpc.vpc.id
   cidr_block = cidrsubnet(var.vpc_cidr_block, 4, count.index)
 
   tags = merge(var.standard_tags, var.cost_tags)
