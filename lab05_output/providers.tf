@@ -5,6 +5,12 @@
 
 ############################################# TERRAFORM #############################################
 terraform {
+  backend "s3" {
+    bucket = "mybucket"
+    key    = "terraform/lab05/network.tfstate"
+    region = "us-east-1"
+  }
+  //backend "s3" {}
   required_providers {
     aws = {
       source = "hashicorp/aws"
