@@ -15,8 +15,8 @@
 
 ############################################# TERRAFORM #############################################
 
-region      = "us-east-1"
-profile     = "tf-acn-treinamento"
-vpc_id      = "vpc-0d40ecb598f56d856"
-counter     = 5
-environment = "dev"
+region         = "us-east-1"
+profile        = "tf-acn-treinamento"
+vpc_cidr_block = "10.0.0.0/16"
+counter        = 5
+environment    = "dev"
