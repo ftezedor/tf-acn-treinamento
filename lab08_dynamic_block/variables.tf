@@ -40,7 +40,7 @@ variable "prefix" {
   default = "tf"
 }
 
-variable "counter" {
+variable "sequence" {
   type = number
   default = 1
 }
