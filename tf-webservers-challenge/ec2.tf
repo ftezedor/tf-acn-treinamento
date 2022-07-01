@@ -1,8 +1,4 @@
 ############################################# TERRAFORM #############################################
-/* data "aws_subnet" "selected" {
-  id = aws_subnet.public_subnet_a.id
-} */
-
 resource "aws_instance" "ec2_linux" {
   count = var.counter
 
