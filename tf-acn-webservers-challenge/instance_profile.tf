@@ -1,6 +1,6 @@
 ############################################# TERRAFORM #############################################
 resource "aws_iam_role" "ec2_role" {
-  name = tf-ec2-assume-role
+  nome = "tf-ec2-assume-role"
 
   assume_role_policy = <<EOF
 {
