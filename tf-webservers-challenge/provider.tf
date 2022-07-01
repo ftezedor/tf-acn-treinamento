@@ -18,16 +18,6 @@ terraform {
 provider "aws" {
   region  = var.region
   profile = var.profile
-
-  default_tags {
-    tags = {
-      Purpose = "Accenture - Treinamento Terraform"
-      Owner1  = "Lucas Omena"
-      Email1  = "lucas.omena@accenture.com"
-      Owner2  = "Felipe Grucci"
-      Email2  = "felipe.grucci@accenture.com"
-    }
-  }
 }
 
 ############################################# TERRAFORM #############################################
