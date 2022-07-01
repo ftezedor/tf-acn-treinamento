@@ -1,7 +1,7 @@
 ############################################# TERRAFORM #############################################
-data "aws_subnet" "selected" {
+/* data "aws_subnet" "selected" {
   id = aws_subnet.public_subnet_a.id
-}
+} */
 
 resource "aws_instance" "ec2_linux" {
   count = var.counter
@@ -11,9 +11,9 @@ resource "aws_instance" "ec2_linux" {
   iam_instance_profile = aws_iam_instance_profile.ec2_instance_profile.name
   key_name             = aws_key_pair.key_pair.key_name
 
-  subnet_id              = data.aws_subnet.selected.id
+  subnet_id              = aws_subnet.public_subnet_a.id
   vpc_security_group_ids = [aws_security_group.sg_app.id]
-  private_ip             = cidrhost(data.aws_subnet.selected.cidr_block, sum([count.index, 11]))
+  private_ip             = cidrhost(aws_subnet.public_subnet_a.cidr_block, sum([count.index, 11]))
 
   associate_public_ip_address = true
   monitoring                  = true
@@ -46,6 +46,8 @@ resource "aws_instance" "ec2_linux" {
     aws_subnet.public_subnet_b,
     aws_subnet.private_subnet_a,
     aws_subnet.private_subnet_b,
+    aws_nat_gateway.ngw,
+    aws_internet_gateway.igw,
     aws_security_group.sg_app,
     aws_security_group.sg_lb
   ]

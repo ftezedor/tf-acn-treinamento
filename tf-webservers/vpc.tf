@@ -15,7 +15,7 @@ resource "aws_vpc" "vpc" {
 resource "aws_subnet" "public_subnet_a" {
   vpc_id               = aws_vpc.vpc.id
   cidr_block           = cidrsubnet(aws_vpc.vpc.cidr_block, 8, 10)
-  availability_zone_id = data.aws_availability_zones.azs.zone_ids[0]
+  availability_zone_id = data.aws_availability_zones.azs.zone_ids[1]
 
   tags = {
     "Name" = join("-", [lower(var.prefix), "public", "subnet", lower(var.environment), format("%02d", sum([var.number_of_sequence, 0]))])
@@ -25,7 +25,7 @@ resource "aws_subnet" "public_subnet_a" {
 resource "aws_subnet" "public_subnet_b" {
   vpc_id               = aws_vpc.vpc.id
   cidr_block           = cidrsubnet(aws_vpc.vpc.cidr_block, 8, 11)
-  availability_zone_id = data.aws_availability_zones.azs.zone_ids[1]
+  availability_zone_id = data.aws_availability_zones.azs.zone_ids[2]
 
   tags = {
     "Name" = join("-", [lower(var.prefix), "public", "subnet", lower(var.environment), format("%02d", sum([var.number_of_sequence, 1]))])
@@ -43,7 +43,7 @@ resource "aws_internet_gateway" "igw" {
 resource "aws_subnet" "private_subnet_a" {
   vpc_id               = aws_vpc.vpc.id
   cidr_block           = cidrsubnet(aws_vpc.vpc.cidr_block, 8, 20)
-  availability_zone_id = data.aws_availability_zones.azs.zone_ids[0]
+  availability_zone_id = data.aws_availability_zones.azs.zone_ids[1]
 
   tags = {
     "Name" = join("-", [lower(var.prefix), "private", "subnet", lower(var.environment), format("%02d", sum([var.number_of_sequence, 0]))])
@@ -53,7 +53,7 @@ resource "aws_subnet" "private_subnet_a" {
 resource "aws_subnet" "private_subnet_b" {
   vpc_id               = aws_vpc.vpc.id
   cidr_block           = cidrsubnet(aws_vpc.vpc.cidr_block, 8, 21)
-  availability_zone_id = data.aws_availability_zones.azs.zone_ids[1]
+  availability_zone_id = data.aws_availability_zones.azs.zone_ids[2]
 
   tags = {
     "Name" = join("-", [lower(var.prefix), "private", "subnet", lower(var.environment), format("%02d", sum([var.number_of_sequence, 1]))])
@@ -78,6 +78,7 @@ resource "aws_nat_gateway" "ngw" {
   }
 
   depends_on = [
+    aws_eip.eip,
     aws_internet_gateway.igw
   ]
 }

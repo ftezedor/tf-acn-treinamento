@@ -20,7 +20,7 @@ cost_tags = {
 }
 
 // EC2
-root_volume_type = "gp3"
+root_volume_type = "gp2"
 root_volume_size = 8
 operating_system = "amazon-linux"
 amis = {
