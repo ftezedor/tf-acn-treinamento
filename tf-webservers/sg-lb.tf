@@ -1,5 +1,4 @@
-############################################# LUCAS OMENA #############################################
-
+############################################# TERRAFORM #############################################
 resource "aws_security_group" "sg_lb" {
   name        = join("-", ["lb", "security", "group", format("%02d", var.number_of_sequence)])
   description = join(" ", ["lb", "security", "group", lower(var.environment)])
