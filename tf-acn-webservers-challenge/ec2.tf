@@ -7,9 +7,9 @@ resource "aws_instance" "ec2_linux" {
   iam_instance_profile = aws_iam_instance_profile.ec2_instance_profile.name
   key_name             = aws_key_pair.key_pair.key_name
 
-  subnet_id              = aws_subnet.public_subnet_a.id
+  subnet_id              = aws_subnet.private_subnet_a.id
   vpc_security_group_ids = [aws_security_group.sg_app.id]
-  private_ip             = cidrhost(aws_subnet.public_subnet_a.cidr_block, sum([count.index, 11]))
+  private_ip             = cidrhost(aws_subnet.private_subnet_a.cidr_block, sum([count.index, 11]))
 
   associate_public_ip_address = true
   monitoring                  = true

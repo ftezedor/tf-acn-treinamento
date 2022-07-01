@@ -5,7 +5,7 @@ terraform {
     bucket  = "tf-state-929365926532"
     key     = "tf-acn-treinamento/tf-acn-webservers-challenge.tfstate"
     region  = "us-east-1"
-    profile = "tf-acn"
+    profile = "test"
   }
   required_providers {
     aws = {
