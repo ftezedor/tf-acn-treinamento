@@ -4,6 +4,7 @@ terraform {
   backend "s3" {
     bucket  = "tf-state-929365926532"
     key     = "tf-acn-treinamento/tf-webservers.tfstate"
+    region  = "us-east-1"
     profile = "tf-acn-treinamento"
   }
   required_providers {
