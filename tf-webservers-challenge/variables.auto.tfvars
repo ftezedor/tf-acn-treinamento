@@ -8,7 +8,7 @@ vpc_cidr_block = "10.10.0.0/16"
 
 // NAMING
 prefix             = "tf"
-environment        = "dev"
+environment        = "test"
 number_of_sequence = 1
 
 // TAGGING
