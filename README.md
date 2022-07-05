@@ -41,15 +41,15 @@ $ terraform apply -refresh-only
 
 ## Conexão com AWS
 
-Para conectar-se à AWS, utilize os comandos abaixo:
+Para conectar-se à AWS, utilize uma das opções abaixo:
 
-### Configuração de profile
+### a) Configuração de profile
 
 ```sh
 $ aws configure --profile tf-acn-treinamento
 ```
 
-### Configuração de IAM Role
+### b) Configuração de IAM Role
 
 ```sh
 $ aws sts assume-role --role-arn arn:aws:iam::<aws-account-id>:role/<iam-role-name> --role-session-name "<session-name>" --profile <profile-name> --output json
