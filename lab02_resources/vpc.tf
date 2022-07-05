@@ -54,7 +54,8 @@ resource "aws_nat_gateway" "ngw" {
   }
 
   depends_on = [
-    aws_internet_gateway.igw
+    aws_internet_gateway.igw,
+    aws_vpc.first_vpc
   ]
 }
 
