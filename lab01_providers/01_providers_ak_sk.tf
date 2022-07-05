@@ -4,7 +4,7 @@
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 
 ############################################# TERRAFORM #############################################
-terraform {
+/* terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
@@ -15,6 +15,6 @@ terraform {
 
 provider "aws" {
     region = "us-east-1"
-    access_key = "ABCD12345"
-    secret_key = "aaaaaaaabbbbbbbbbccccccc111122223333"
-}
+    access_key = "AKIAQUISU65O74VTJG7Y"
+    secret_key = "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"
+} */
