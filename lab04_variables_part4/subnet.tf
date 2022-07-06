@@ -7,9 +7,9 @@
 
 // LOCAL VARIABLES
 locals {
-  subnet_tag = join("-", ["tf", "subnet", "01"])
+  #subnet_tag = join("-", ["tf", "subnet", "01"])
   #subnet_tag = join("-", ["tf", "subnet", var.environment])
-  #subnet_tag = join("-", ["tf", "subnet", var.environment])
+  subnet_tag = join("-", ["tf", "subnet", var.environment])
   environments = {
     "dev"     = "development"
     "pre"     = "pre-production"
@@ -33,9 +33,9 @@ resource "aws_subnet" "subnets" {
   cidr_block = "10.0.20${count.index}.0/24"
 
   tags = {
-    "Name" = local.subnet_tag
+    #"Name" = local.subnet_tag
     #"Name" = join("-", [local.subnet_tag, count.index])
-    #"Name"        = join("-", [local.subnet_tag, sum([1, count.index])])
+    "Name"        = join("-", [local.subnet_tag, sum([1, count.index])])
     "Environment" = local.env
   }
 }
