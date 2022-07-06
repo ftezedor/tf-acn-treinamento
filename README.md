@@ -1,7 +1,15 @@
 # tf-acn-treinamento
 Laboratórios práticos e desafio prático para criação de ambiente
 
+## Conexão com AWS
 
+Para conectar-se à AWS, utilize uma das opções abaixo:
+
+### a) Configuração de profile
+
+```sh
+$ aws configure --profile tf-acn-treinamento
+```
 
 ## Inicializando Terraform
 
@@ -30,30 +38,3 @@ Para efetivar a implementação dos recursos provisionados, execute o comando ab
 $ terraform apply
 ```
 **Uma confirmação para implementação será solicitada 
-
-## Refresh no arquivo State
-
-O comando abaixo quando executado, realiza um escaneamento no provedor e validar modificações feitas manualmente fora do terraform e atualiza o arquivo State com essas modificações
-
-```sh
-$ terraform apply -refresh-only
-```
-
-## Conexão com AWS
-
-Para conectar-se à AWS, utilize uma das opções abaixo:
-
-### a) Configuração de profile
-
-```sh
-$ aws configure --profile tf-acn-treinamento
-```
-
-### b) Configuração de IAM Role
-
-```sh
-$ aws sts assume-role --role-arn arn:aws:iam::<aws-account-id>:role/<iam-role-name> --role-session-name "<session-name>" --profile <profile-name> --output json
-$ export AWS_ACCESS_KEY_ID=<access-key-id>
-$ export AWS_SECRET_ACCESS_KEY=<secret-key-id>
-$ export AWS_SESSION_TOKEN=<session-token>
-```
