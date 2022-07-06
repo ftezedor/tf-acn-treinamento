@@ -5,12 +5,12 @@
 
 ############################################# TERRAFORM #############################################
 terraform {
-  backend "s3" {
-    bucket  = "tf-state-file-965699425769"
-    key     = "terraform/lab05/network.tfstate"
+  /* backend "s3" {
+    bucket  = "tf-state-file-<aws_account_id>"
+    key     = "terraform/lab05/<nome>/network.tfstate"
     region  = "us-east-1"
     profile = "tf-acn-treinamento"
-  }
+  } */
   //backend "s3" {}
   required_providers {
     aws = {

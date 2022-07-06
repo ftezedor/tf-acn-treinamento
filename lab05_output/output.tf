@@ -14,16 +14,16 @@
 ############################################# TERRAFORM #############################################
 
 output "subnet_id" {
-    description = "The ID of the subnet"
-    value = aws_subnet.subnets[*].id
+  description = "The ID of the subnet"
+  value       = aws_subnet.subnets[*].id
 }
 
 output "subnet_arn" {
-    description = "The ARN of the subnet"
-    value = aws_subnet.subnets[*].arn
+  description = "The ARN of the subnet"
+  value       = aws_subnet.subnets[*].arn
 }
 
 output "subnet_owner_id" {
-    description = "The ID of the AWS account that owns the subnet"
-    value = aws_subnet.subnets[*].owner_id
+  description = "The ID of the AWS account that owns the subnet"
+  value       = aws_subnet.subnets[*].owner_id
 }
