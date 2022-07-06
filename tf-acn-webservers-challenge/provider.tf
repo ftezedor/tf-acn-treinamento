@@ -2,8 +2,8 @@
 
 terraform {
   backend "s3" {
-    bucket  = "tf-state-929365926532"
-    key     = "tf-acn-treinamento/tf-acn-webservers-challenge.tfstate"
+    bucket  = "tf-state-<aws_account_id>"
+    key     = "tf-acn-treinamento/<seu_nome>/tf-acn-webservers-challenge.tfstate"
     region  = "us-east-1"
     profile = "test"
   }
