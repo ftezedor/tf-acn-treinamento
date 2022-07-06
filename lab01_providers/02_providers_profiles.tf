@@ -17,8 +17,3 @@ provider "aws" {
     region = "us-east-1"
     profile = "tf-acn-treinamento"
 } */
-
-/* 
-aws configure --profile tf-acn-treinamento
---- Informar Access Key, Secret Key, Region e Output (text, json ou yaml)
-*/
