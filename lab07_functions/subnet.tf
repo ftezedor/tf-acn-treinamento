@@ -17,8 +17,11 @@
 ############################################# TERRAFORM #############################################
 locals {
   custom_tags = {
-    Name = join("-", ["subnet", "functions"])
+    "Lucas Omena" = "Group1"
+    "Felipe Grucci" = "Group2"
   }
+
+  collect_group = lookup(local.custom_tags, "Lucas Omena")
 }
 
 data "aws_vpc" "vpc" {
