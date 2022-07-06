@@ -5,9 +5,8 @@
 # https://www.terraform.io/language/resources
 
 ############################################# TERRAFORM #############################################
-# <block_type> "<label>" "<name_label>"
+
 resource "aws_vpc" "first_vpc" {
-  #    <key>        <value>  
   cidr_block = "10.0.0.0/16"
 
   tags = {
@@ -55,7 +54,8 @@ resource "aws_nat_gateway" "ngw" {
   }
 
   depends_on = [
-    aws_internet_gateway.igw
+    aws_internet_gateway.igw,
+    aws_vpc.first_vpc
   ]
 }
 
