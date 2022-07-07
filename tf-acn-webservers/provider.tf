@@ -20,4 +20,11 @@ provider "aws" {
   profile = var.profile
 }
 
+resource "random_string" "suffix" {
+  length  = 7
+  lower   = true
+  upper   = false
+  special = false
+}
+
 ############################################# TERRAFORM #############################################

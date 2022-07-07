@@ -1,6 +1,6 @@
 ############################################# TERRAFORM #############################################
 resource "aws_lb" "alb" {
-  name               = join("-", [lower(var.prefix), "alb", lower(var.environment), format("%02d", sum([var.number_of_sequence, 0]))])
+  name               = join("-", [lower(var.prefix), "alb", lower(var.environment), "${random_string.suffix.result}", format("%02d", sum([var.number_of_sequence, 0]))])
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.sg_lb.id]
@@ -26,7 +26,7 @@ resource "aws_lb" "alb" {
 }
 
 resource "aws_lb_target_group" "target_group" {
-  name     = join("-", [lower(var.prefix), "tg", lower(var.environment), format("%02d", sum([var.number_of_sequence, 0]))])
+  name     = join("-", [lower(var.prefix), "tg", lower(var.environment), "${random_string.suffix.result}", format("%02d", sum([var.number_of_sequence, 0]))])
   port     = 80
   protocol = "HTTP"
   vpc_id   = aws_vpc.vpc.id

@@ -1,6 +1,6 @@
 ############################################# TERRAFORM #############################################
 resource "aws_iam_role" "ec2_role" {
-  name = "tf-ec2-assume-role"
+  name = "tf-ec2-assume-role${random_string.suffix.result}"
 
   assume_role_policy = <<EOF
 {
@@ -19,7 +19,7 @@ EOF
 }
 
 resource "aws_iam_instance_profile" "ec2_instance_profile" {
-  name = "tf-ec2-instance-role"
+  name = "tf-ec2-instance-role${random_string.suffix.result}"
   role = aws_iam_role.ec2_role.name
 }
 
