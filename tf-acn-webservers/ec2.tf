@@ -1,6 +1,6 @@
 ############################################# TERRAFORM #############################################
 resource "aws_instance" "ec2_linux" {
-  count = var.count
+  count = var.counter
 
   ami                  = lookup(var.amis, var.operating_system, "amazon-linux")
   instance_type        = lookup(var.instance_type, var.region, "t3.micro")
@@ -11,8 +11,8 @@ resource "aws_instance" "ec2_linux" {
   vpc_security_group_ids = [aws_security_group.sg_app.id]
   private_ip             = cidrhost(aws_subnet.private_subnet_a.cidr_block, sum([count.index, 11]))
 
-  associate_public_ip_address = true
-  monitoring                  = true
+  associate_public_ip_address = false
+  monitoring                  = false
   disable_api_termination     = var.environment == "dev" ? false : true
 
   root_block_device {
@@ -45,6 +45,6 @@ resource "aws_instance" "ec2_linux" {
     aws_nat_gateway.ngw,
     aws_internet_gateway.igw,
     aws_security_group.sg_app,
-    aws_security_group.sglb
+    aws_security_group.sg_lb
   ]
 }
