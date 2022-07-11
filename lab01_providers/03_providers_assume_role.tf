@@ -4,7 +4,7 @@
 # https://registry.terraform.io/providers/hashicorp/aws/latest
 
 ############################################# TERRAFORM #############################################
-terraform {
+/* terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
@@ -16,9 +16,9 @@ terraform {
 provider "aws" {
     region = "us-east-1"
     assume_role {
-      role_arn = "arn:aws:iam::043525666653:role/qualquercoisa"
+      role_arn = "arn:aws:iam::600908795746:role/tf-acn-role"
     }
-}
+} */
 
 /*
 Criar IAM Role 
@@ -47,17 +47,17 @@ Em seguida, atribuir uma Inline policy para Assume Role
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": "sts:AssumeRole",
-            "Resource": "arn:aws:iam::043525666653:role/qualquercoisa"
+            "Resource": "arn:aws:iam::600908795746:role/tf-acn-role"
         }
     ]
 }
 
 
 
-aws sts assume-role --role-arn arn:aws:iam::043525666653:role/qualquercoisa --role-session-name "tf-acn-treinamento-session" --profile tf-acn-treinamento --output json
-export AWS_ACCESS_KEY_ID=ASIAQUISU65O3VQVRM3P
-export AWS_SECRET_ACCESS_KEY=MSw76nmi61syXpGajzNUsX1RD8OhEBnqER/Rlagr
-export AWS_SESSION_TOKEN=IQoJb3JpZ2luX2VjEG8aCXVzLWVhc3QtMSJIMEYCIQCFH5w0kARpirYVfon84ncRfhcnGsr7F/ZfLRxRDIP0owIhAJj73SgGDDuyIbz/HZZNrIDIx5oMUPnXamRevoXIf/9MKrACCJj//////////wEQARoMMDQzNTI1NjY2NjUzIgyoe1LXMer/j3W1W4AqhAL9f4gFExZ+Ar3CC//TdbmE7I2PflMqRYBLOzBIeIvo70yussQcxGdq4G5lkG/snuFYqzIhamC9ST/TJNhRQkepv+BWV/mHALKRiy8t6daZVbTz7LaRTlY47mqlib6O2eK3hFRgirL7tiaj3fhrFOaAWm8S55GAJQfNjB/pjdye+G7NoqsMlFoZrKj131RFn87j9CfLHIjOYuASWwYDOayNWt+9mB3DmIVbrPiK9nrH8DJ8ssRnkJ4uVcbKfHyxRYmnY/32HIARjXDYnfDVjULfUWZVSghnpWTcwjHOFQdMyV2hbGRFoH/1wPbwIF4TzBCVLDLCoU2EM8iQbWda7KEhstTjsTCL142WBjqcAeWgYIb1KjJfQqNd+5tbEka8mAlN0Rwdrbn0H/ad8/X4umCzmcOEKc5qSHaz7hlQNrx3r8a2qwgxnY/BWKB+N45nwBod3JJeWMqVxuRd/UNiNotvsCMWqAiGf7QRb9sMHW8OBi8iartQuOVrj+MDciHKLXzM8HF0EyupNOvFFvWC4IkYFySy0lJa/fZCZupUOhRFNygO0Ocm6LfmjA==
+aws sts assume-role --role-arn arn:aws:iam::600908795746:role/tf-acn-role --role-session-name "tf-acn-treinamento-session" --profile tf-acn-treinamento --output json
+export AWS_ACCESS_KEY_ID=ASIAYX2HUR5REKSWXB6B
+export AWS_SECRET_ACCESS_KEY=GdpY3miqJvRmvSs1vSbEEzaGjl2NBGuF48k2q4ba
+export AWS_SESSION_TOKEN=IQoJb3JpZ2luX2VjEBcaCXVzLWVhc3QtMSJHMEUCIQCR0Egllqg9Puw/yHQw36ZlVqouAzZelCQwHQgTplUn3QIgGuniOXhM8PB1FZklPIB9lFSIxyOiOgusLsT7tXv8M7MqpwIIUBABGgw2MDA5MDg3OTU3NDYiDMYsHQ9U7PpBZ0N9bSqEAlLsQ5tR/zsmzQG9a1t07Y7+2VnWuETSQwPKE7E0tCVp2g/04+r54ZEMgZu8lxuMMxOHTBu2/f+EM2YtjHiZr1z1oMpDRnvfUyFW/YIu95t3usTdJZ02R02CX7p8a5U3rGj78YYTqnG6S2R2CSqPSq9PmIdomANuO+0bXBtKRpdXP3zJVK5OGjQCCWYSTu0WMcyEqwcSvFzcJlRBOjWjThwuW892gZpu3l8dyzXm+c9iZ4UP8wMGGmOFVDa1AViqWTILAABiMWKqAuFrdGzyKt78vseCqT2SL0uaSFOZQ5jPaPdbav6A+ApSRkxwId/j3iUODOzjoxIMnUnkFRwEfTgy15yzMMnMspYGOp0BwA0hwfz3rqcEUAtYlgWcvCAhYbMhbbpcjL9bF0rp/CYDy8okCe0VLEeGmTJEIa/5yxG99Eqvq5isyJmP9dB8YrxgiZfHinN3hHgJC7SerPN2YaqKEQjlTHi81eZcy7oqRMaaUbTlGHQgSxkQS2mTvveFVdLYqM8aGGdDya0wqMQ0PxH45CE7YMT+qeOviyCGP8FjaGYFpDLGkgnPtQ==
 
 ===
 
