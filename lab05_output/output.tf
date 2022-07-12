@@ -13,12 +13,12 @@
 
 ############################################# TERRAFORM #############################################
 
-output "subnet_id" {
+output "subnet_id_qualquer" {
   description = "The ID of the subnet"
   value       = aws_subnet.subnets[*].id
 }
 
-output "subnet_arn" {
+output "subnet_arn_qualquer" {
   description = "The ARN of the subnet"
   value       = aws_subnet.subnets[*].arn
 }
