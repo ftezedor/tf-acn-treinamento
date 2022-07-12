@@ -22,7 +22,7 @@ variable "region" {
 
 variable "profile" {
   type = string
-  default = "tf-acn-treinamento"
+  default = "tf"
 }
 
 variable "vpc_cidr_block" {

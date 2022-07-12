@@ -15,7 +15,7 @@
 
 ############################################# TERRAFORM #############################################
 
-variable "region" {
+variable "region_us" {
   type = string
   default = "us-east-1"
 }
