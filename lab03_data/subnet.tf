@@ -8,7 +8,7 @@
 
 resource "aws_subnet" "first_subnet" {
   vpc_id = data.aws_vpc.vpc.id
-  cidr_block = "10.0.0.0/24"
+  cidr_block = "172.31.10.0/24"
 
   tags = {
     "Name" = "first-subnet"
