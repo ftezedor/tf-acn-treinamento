@@ -29,7 +29,7 @@ ingress_rules = [{
   protocol    = "tcp"
   cidr_blocks = [
     "0.0.0.0/0"
-  ] } 
+  ]}
 ]
 
 custom_tags = {
