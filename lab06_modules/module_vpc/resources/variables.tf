@@ -16,27 +16,27 @@
 ############################################# TERRAFORM #############################################
 
 variable "region" {
-  type = string
+  type    = string
   default = ""
 }
 
 variable "profile" {
-  type = string
+  type    = string
   default = ""
 }
 
 variable "vpc_id" {
-  type = string
+  type    = string
   default = ""
 }
 
 variable "counter" {
-  type = number
+  type    = number
   default = 1
 }
 
 variable "environment" {
-  type = string
+  type    = string
   default = "dev"
 
   validation {

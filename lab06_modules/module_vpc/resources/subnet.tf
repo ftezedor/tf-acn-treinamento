@@ -12,9 +12,9 @@ data "aws_vpc" "vpc" {
 
 resource "aws_subnet" "se_subnet" {
   count = var.counter
-  
-  vpc_id = data.aws_vpc.vpc.id
-  cidr_block = "10.10.21${count.index}.0/24"
+
+  vpc_id     = data.aws_vpc.vpc.id
+  cidr_block = "172.31.21${count.index}.0"
 
   tags = {
     Name        = "subnet-module-0${sum([1, count.index])}"
