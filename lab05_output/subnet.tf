@@ -28,7 +28,7 @@ resource "aws_subnet" "subnets" {
   count = var.counter
 
   vpc_id     = data.aws_vpc.vpc.id
-  cidr_block = "10.0.21${count.index}.0/24"
+  cidr_block = "172.31.21${count.index}.0/24"
 
   tags = {
     "Name"        = join("-", [local.subnet_tag, sum([1, count.index])])
