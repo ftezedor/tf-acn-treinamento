@@ -6,12 +6,12 @@
 
 ############################################# TERRAFORM #############################################
 data "aws_vpc" "vpc" {
-  cidr_block = "172.32.0.0/16"
+  cidr_block = "172.31.0.0/16"
 }
 
 resource "aws_subnet" "first_subnet" {
   vpc_id = data.aws_vpc.vpc.id
-  cidr_block = "172.32.10.0/24"
+  cidr_block = "172.31.100.0/24"
 
   tags = {
     "Name" = "first-subnet"
