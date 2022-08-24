@@ -17,7 +17,7 @@
 
 region         = "us-east-1"
 profile        = "tf-acn-treinamento"
-vpc_cidr_block = "10.0.0.0/16"
+vpc_cidr_block = "10.11.0.0/16"
 environment    = "dev"
 sequence       = 1
 prefix         = "tf"
@@ -29,7 +29,15 @@ ingress_rules = [{
   protocol    = "tcp"
   cidr_blocks = [
     "0.0.0.0/0"
-  ]}
+  ]},
+  {
+  description = "Allow HTTPS"
+  from_port   = 443
+  to_port     = 443
+  protocol    = "tcp"
+  cidr_blocks = [
+    "0.0.0.0/0"
+  ]},
 ]
 
 custom_tags = {
