@@ -17,17 +17,17 @@
 
 variable "region" {
   type    = string
-  default = ""
+  default = "us-east-1"
 }
 
 variable "profile" {
   type    = string
-  default = ""
+  default = "tf-acn-treinamento"
 }
 
 variable "vpc_id" {
   type    = string
-  default = ""
+  default = "vpc-0156a3ef3b5f1a089"
 }
 
 variable "counter" {

@@ -27,7 +27,7 @@ variable "profile" {
 
 variable "vpc_id" {
   type = string
-  default = "vpc-12345"
+  default = "vpc-0156a3ef3b5f1a089"
 }
 
 variable "counter" {
