@@ -17,17 +17,17 @@
 
 variable "region" {
   type = string
-  default = ""
+  default = "us-east-1"
 }
 
 variable "profile" {
   type = string
-  default = ""
+  default = "tf-acn-treinamento"
 }
 
 variable "vpc_cidr_block" {
   type = string
-  default = ""
+  default = "172.31.0.0/16"
 }
 
 variable "counter" {
