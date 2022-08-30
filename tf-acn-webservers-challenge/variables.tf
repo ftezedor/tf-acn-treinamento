@@ -38,7 +38,8 @@ variable "prefix" {
   default = "tf"
 
   validation {
-    condition     = contains(["tf"], var.suffix)
+    # condition     = contains(["tf"], var.suffix)
+    condition     = contains(["tf"], var.prefix)
     error_message = "The current support values is tf."
   }
 }
